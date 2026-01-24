@@ -1,0 +1,13 @@
+{{/* Custom head additions */}}
+{{ $alg := site.Params.fingerprintAlgorithm | default "sha512" }}
+
+{{/* Print CSS */}}
+{{ with resources.Get "css/print.css" }}
+  {{ $printCSS := . | resources.Minify | resources.Fingerprint $alg }}
+  <link
+    type="text/css"
+    rel="stylesheet"
+    media="print"
+    href="{{ $printCSS.RelPermalink }}"
+    integrity="{{ $printCSS.Data.Integrity }}">
+{{ end }}

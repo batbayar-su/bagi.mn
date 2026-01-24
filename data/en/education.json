@@ -1,0 +1,18 @@
+[
+  {
+    "degree": "Bachelor of Computer Applications",
+    "institution": "Manonmaniam Sundaranar University",
+    "location": "India",
+    "startDate": "01.2009",
+    "endDate": "01.2012",
+    "description": "Computer science knowledge, programming languages, data structures, algorithms, databases, testing, system design, and graphic design."
+  },
+  {
+    "degree": "Computer Applications Training",
+    "institution": "Aptech Worldwide Mongolia",
+    "location": "Mongolia",
+    "startDate": "01.2008",
+    "endDate": "01.2011",
+    "description": "Programming fundamentals, programming languages, relational databases, networking, and server management."
+  }
+]

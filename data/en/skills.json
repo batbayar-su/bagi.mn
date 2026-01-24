@@ -1,0 +1,35 @@
+{
+  "coding": [
+    "React",
+    "Vue",
+    "Angular",
+    "React Native",
+    "NodeJS",
+    "GraphQL",
+    "Ruby on Rails",
+    "AWS, Terraform",
+    "MySQL, PostgreSQL",
+    "Firebase",
+    "Golang, PHP, Linux"
+  ],
+  "knowledge": [
+    "Micro-frontend architecture",
+    "Web and mobile development",
+    "CI/CD process, automation",
+    "Cloud native solution",
+    "Infrastructure as a code",
+    "Relational database",
+    "NoSQL database",
+    "Monitoring and troubleshooting",
+    "Linux server, virtualization",
+    "Agile, waterfall methodologies"
+  ],
+  "personal": [
+    "Positive work ethic",
+    "Self independent",
+    "Team player",
+    "Mentor",
+    "Hard worker",
+    "Team motivator"
+  ]
+}

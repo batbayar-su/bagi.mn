@@ -1,6 +1,14 @@
 {{ $disableImageOptimization := .Site.Params.disableImageOptimization | default false }}
 {{ $disableHeroImageFilter := .Site.Params.homepage.disableHeroImageFilter | default false }}
+
+{{/* Load resume data */}}
+{{ $bio := index site.Data site.Language.Lang "bio" }}
+{{ $experience := index site.Data site.Language.Lang "experience" }}
+{{ $education := index site.Data site.Language.Lang "education" }}
+{{ $skills := index site.Data site.Language.Lang "skills" }}
+
 <article class="max-w-full prose dark:prose-invert">
+  {{/* Header Section */}}
   <div class="relative">
     <div class="absolute inset-x-0 bottom-0 h-1/2"></div>
     <div class="mx-auto max-w-7xl p-0">
@@ -83,9 +91,9 @@
               </h2>
             {{ end }}
           {{ end }}
-          <div class="mt-3 mb-10 text-2xl">
+          <div class="mt-3 text-2xl">
             {{ with .Site.Params.Author.links }}
-              <div class="flex flex-wrap">
+              <div class="flex flex-wrap justify-center">
                 {{ range $links := . }}
                   {{ range $name, $url := $links }}
                     {{ if not $disableHeroImageFilter }}
@@ -114,12 +122,132 @@
               </div>
             {{ end }}
           </div>
-          <section class="prose prose-invert w-full">{{ .Content }}</section>
         </div>
       </div>
     </div>
   </div>
+
+  {{/* Resume Content */}}
+  <div class="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+    
+    {{/* Bio Section */}}
+    {{ with $bio }}
+      <section class="mb-16 resume-section">
+        <h2 class="text-3xl font-bold mb-6 text-neutral-800 dark:text-neutral-200">{{ if eq site.Language.Lang "mn" }}Танилцуулга{{ else }}About{{ end }}</h2>
+        <p class="text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed">{{ .summary }}</p>
+      </section>
+    {{ end }}
+
+    {{/* Experience Section */}}
+    {{ with $experience }}
+      <section class="mb-16 resume-section">
+        <h2 class="text-3xl font-bold mb-8 text-neutral-800 dark:text-neutral-200">{{ if eq site.Language.Lang "mn" }}Ажлын Туршлага{{ else }}Experience{{ end }}</h2>
+        <div class="space-y-8">
+          {{ range . }}
+            <div class="pb-8 border-b border-neutral-200 dark:border-neutral-700 last:border-b-0 last:pb-0">
+              <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
+                <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">{{ .position }}</h3>
+                <span class="text-base sm:text-sm md:text-base whitespace-nowrap mt-1 sm:mt-0 text-neutral-500 dark:text-neutral-400">{{ .startDate }} – {{ .endDate }}</span>
+              </div>
+              <p class="text-neutral-600 dark:text-neutral-400 mb-3">{{ .company }}{{ if .location }} • {{ .location }}{{ end }}</p>
+              <p class="text-neutral-700 dark:text-neutral-300 mb-3">{{ .description }}</p>
+              
+              {{ if .achievements }}
+                <ul class="list-disc list-inside space-y-1 text-neutral-700 dark:text-neutral-300 mb-3">
+                  {{ range .achievements }}
+                    <li>{{ . }}</li>
+                  {{ end }}
+                </ul>
+              {{ end }}
+              
+              {{ if .technologies }}
+                <div class="flex flex-wrap gap-2">
+                  {{ range .technologies }}
+                    <span class="px-2 py-0.5 text-xs bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 rounded">{{ . }}</span>
+                  {{ end }}
+                </div>
+              {{ end }}
+            </div>
+          {{ end }}
+        </div>
+      </section>
+    {{ end }}
+
+    {{/* Education Section */}}
+    {{ with $education }}
+      <section class="mb-16 resume-section">
+        <h2 class="text-3xl font-bold mb-8 text-neutral-800 dark:text-neutral-200">{{ if eq site.Language.Lang "mn" }}Боловсрол{{ else }}Education{{ end }}</h2>
+        <div class="space-y-8">
+          {{ range . }}
+            <div class="pb-8 border-b border-neutral-200 dark:border-neutral-700 last:border-b-0 last:pb-0">
+              <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
+                <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">{{ .degree }}{{ if .field }} in {{ .field }}{{ end }}</h3>
+                <span class="text-base sm:text-sm md:text-base whitespace-nowrap mt-1 sm:mt-0 text-neutral-500 dark:text-neutral-400">{{ .startDate }} – {{ .endDate }}</span>
+              </div>
+              <p class="text-neutral-600 dark:text-neutral-400 mb-3">{{ .institution }}{{ if .location }} • {{ .location }}{{ end }}</p>
+              
+              {{ if .description }}
+                <p class="text-neutral-700 dark:text-neutral-300 mb-3">{{ .description }}</p>
+              {{ end }}
+              
+              {{ if .gpa }}
+                <p class="text-neutral-700 dark:text-neutral-300 mb-3">{{ if eq site.Language.Lang "mn" }}Голч оноо{{ else }}GPA{{ end }}: {{ .gpa }}</p>
+              {{ end }}
+              
+              {{ if .achievements }}
+                <ul class="list-disc list-inside space-y-1 text-neutral-700 dark:text-neutral-300">
+                  {{ range .achievements }}
+                    <li>{{ . }}</li>
+                  {{ end }}
+                </ul>
+              {{ end }}
+            </div>
+          {{ end }}
+        </div>
+      </section>
+    {{ end }}
+
+    {{/* Skills Section */}}
+    {{ with $skills }}
+      <section class="mb-16 resume-section">
+        <h2 class="text-3xl font-bold mb-8 text-neutral-800 dark:text-neutral-200">{{ if eq site.Language.Lang "mn" }}Ур Чадвар{{ else }}Skills{{ end }}</h2>
+        
+        {{/* Coding Skills */}}
+        {{ with .coding }}
+          <div class="mb-8">
+            <h3 class="text-xl font-semibold mb-4 text-neutral-800 dark:text-neutral-200">{{ if eq site.Language.Lang "mn" }}Програмчлал{{ else }}Coding{{ end }}</h3>
+            <div class="flex flex-wrap gap-2">
+              {{ range . }}
+                <span class="px-3 py-1.5 bg-neutral-200 dark:bg-neutral-700 text-neutral-800 dark:text-neutral-200 rounded-lg text-sm">{{ . }}</span>
+              {{ end }}
+            </div>
+          </div>
+        {{ end }}
+        
+        {{/* Knowledge Skills */}}
+        {{ with .knowledge }}
+          <div class="mb-8">
+            <h3 class="text-xl font-semibold mb-4 text-neutral-800 dark:text-neutral-200">{{ if eq site.Language.Lang "mn" }}Мэдлэг{{ else }}Knowledge{{ end }}</h3>
+            <div class="flex flex-wrap gap-2">
+              {{ range . }}
+                <span class="px-3 py-1.5 bg-neutral-200 dark:bg-neutral-700 text-neutral-800 dark:text-neutral-200 rounded-lg text-sm">{{ . }}</span>
+              {{ end }}
+            </div>
+          </div>
+        {{ end }}
+        
+        {{/* Personal Skills */}}
+        {{ with .personal }}
+          <div>
+            <h3 class="text-xl font-semibold mb-4 text-neutral-800 dark:text-neutral-200">{{ if eq site.Language.Lang "mn" }}Хувь Хүний Ур Чадвар{{ else }}Personal{{ end }}</h3>
+            <div class="flex flex-wrap gap-2">
+              {{ range . }}
+                <span class="px-3 py-1.5 bg-neutral-200 dark:bg-neutral-700 text-neutral-800 dark:text-neutral-200 rounded-lg text-sm">{{ . }}</span>
+              {{ end }}
+            </div>
+          </div>
+        {{ end }}
+      </section>
+    {{ end }}
+  </div>
 </article>
-<section>
-  {{ partial "recent-articles/main.html" . }}
-</section>

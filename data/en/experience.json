@@ -1,0 +1,106 @@
+[
+  {
+    "position": "Senior Developer",
+    "company": "SAP Signavio",
+    "location": "Berlin",
+    "startDate": "10.2022",
+    "endDate": "Present",
+    "description": "At SAP Signavio, I work on the shell app that brings different micro-frontends into one app. While frontend is the main focus, the company promotes an autonomous team structure, which allows me to work on frontend and backend tasks, from coding to infrastructure.",
+    "achievements": [
+      "Develop a React-based shell application that hosts all microfrontend applications, creating a cohesive suite experience",
+      "Enable other teams to develop microfrontend modules autonomously and integrate them seamlessly into the shell app",
+      "Work on infrastructure to enhance service redundancy and high availability, and improve monitoring and logging systems",
+      "Perform on-call duties to maintain system stability and safety, and enhance observation tools and metrics",
+      "Improve the hiring process and mentor new team members to ensure a smooth onboarding experience"
+    ]
+  },
+  {
+    "position": "Senior Software Engineer",
+    "company": "Klarna",
+    "location": "Berlin",
+    "startDate": "01.2021",
+    "endDate": "10.2022",
+    "description": "Storefronts need to attract customers, and the deal is one of the significant factors. I was working on deals feature development to make deals more reachable, attractive, and targeted to users.",
+    "achievements": [
+      "Develop cross-platform, extensive, testable code in GraphQL on NodeJS backend and React, React Native frontend projects",
+      "Work on new features from top to bottom with a data-driven approach. Take ownership, plan, observe implementation, and perform A/B testing",
+      "Collaborate with other teams to provide fast efficient solutions for cross-team features",
+      "Occasionally be an oncall person and keep system stability safe and maintain observing tools",
+      "Perform threat modeling sessions to take preventive steps for potential risks",
+      "Mentor new joiners to the team"
+    ]
+  },
+  {
+    "position": "Frontend Engineer (Consultant)",
+    "company": "Canva",
+    "location": "Remote from Mongolia",
+    "startDate": "09.2020",
+    "endDate": "12.2020",
+    "description": "Canva has a regional printing service where customers can print their designs on flyers, business cards, stickers, cups, t-shirts, etc. Was working on making new printable products available through Canva.",
+    "achievements": [
+      "Work on implementing features and fixing bugs on the public-facing frontend app to enable more printing options and flexibility",
+      "Deliver multi-platform, extensive, testable code. Improve stability and test code coverage of existing code",
+      "Make React components more accessibility friendly",
+      "Observe system stability and act fast on delivering a solution",
+      "Increase product effectiveness by working with analytics teams to try different approaches"
+    ]
+  },
+  {
+    "position": "Consultant",
+    "company": "Songo",
+    "location": "Remote",
+    "startDate": "06.2019",
+    "endDate": "06.2020",
+    "description": "I encountered exciting experiences while working on this project. Participate in the decision-making process, and work in every part of the development backend, frontend, developer experience, deployment, and infra management.",
+    "achievements": [
+      "Designed a complete system using PostgreSQL, PostgRest, Vert.x, Vue, and Firebase",
+      "Designed and implemented continuous deployment with Gitlab CI, reducing deployment time and ensuring data security",
+      "Collaborated with developers with diverse experience to develop effective technology solutions",
+      "Improved hosting and service management practices to increase availability and reduce costs"
+    ]
+  },
+  {
+    "position": "Senior Software Engineer",
+    "company": "Grab",
+    "location": "Singapore",
+    "startDate": "12.2017",
+    "endDate": "08.2020",
+    "description": "It was a great opportunity to work at a fast-growing company and learn both technically and non-technically from talented people.",
+    "achievements": [
+      "Work with well-structured, dedicated teams to deliver reliable, scalable, testable code for React, RoR, Golang, and GraphQL projects",
+      "Operate closely with site reliability engineers to develop new functionalities and upgrade the existing infrastructure. Terraform, Ansible, and Jenkins were used in infrastructure management and deployment",
+      "Maintain the stability of the projects by completing critical 3rd party integrations and improving code quality of legacy code",
+      "Mentor new members and help them settle down and understand the team workflow",
+      "Participate in immersion programs to understand the pain points of users"
+    ]
+  },
+  {
+    "position": "Software Engineer (Senior)",
+    "company": "Unimedia",
+    "location": "Ulaanbaatar",
+    "startDate": "05.2014",
+    "endDate": "12.2017",
+    "description": "Worked at the Japanese company \"Unimedia\" in Mongolia for 2.5 years as a software engineer then promoted to a senior level just before 2017.",
+    "achievements": [
+      "Operate jointly with engineering managers to keep AWS-based cloud environments scalable, stable, and cost-efficient",
+      "Installed and maintained a rack server in the office to increase development experience",
+      "Run internal training for teams that prepared them to maintain AWS infrastructure and run incident management program",
+      "Worked on a caching system, a crowd-sourcing platform, and a web crawler and made them distributed and reliable",
+      "Mentor interns and new joiners and guided them through the work cycle and culture"
+    ]
+  },
+  {
+    "position": "Teacher",
+    "company": "Aptech Worldwide Mongolia",
+    "location": "Ulaanbaatar",
+    "startDate": "04.2012",
+    "endDate": "05.2014",
+    "description": "I was teaching operating systems, computer parts, networking, desktop applications, and web application development.",
+    "achievements": [
+      "Teach various development languages and technologies (HTML, CSS, Javascript, PHP, SQL, C#, Java, etc.) and explain how the computer parts work",
+      "Assistant in administrating and maintaining a Windows server and network to provide a secure, fast, stable studying and working environment",
+      "Increase teaching content quality by modifying and rearranging premade subjects and topics"
+    ]
+  }
+]
+
