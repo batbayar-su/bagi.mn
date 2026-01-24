@@ -1,0 +1,27 @@
+{
+  "name": "bagi.mn",
+  "version": "1.0.0",
+  "description": "bagi.mn made with hugo",
+  "keywords": [
+    "."
+  ],
+  "bugs": {
+    "url": "https://github.com/batbayar-su/bagi.mn/issues"
+  },
+  "homepage": "https://github.com/batbayar-su/bagi.mn#readme",
+  "author": "batbayar.sukhbaatar@gmail.com",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/batbayar-su/bagi.mn.git"
+  },
+  "scripts": {
+    "server": "hugo server",
+    "dev": "cross-env NODE_ENV=development ./themes/blowfish/node_modules/@tailwindcss/cli/dist/index.mjs -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit -w",
+    "build": "cross-env NODE_ENV=production ./themes/blowfish/node_modules/@tailwindcss/cli/dist/index.mjs -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit",
+    "update-theme": "git submodule update --remote --recursive"
+  },
+  "devDependencies": {
+    "cross-env": "^10.1.0"
+  }
+}
