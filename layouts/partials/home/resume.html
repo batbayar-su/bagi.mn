@@ -9,7 +9,7 @@
 
 <article class="max-w-full prose dark:prose-invert">
   {{/* Header Section */}}
-  <div class="relative">
+  <div id="hero-header" class="relative">
     <div class="absolute inset-x-0 bottom-0 h-1/2"></div>
     <div class="mx-auto max-w-7xl p-0">
       <div class="relative shadow-xl sm:overflow-hidden rounded-2xl">
@@ -124,6 +124,27 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+
+  {{/* Print-only compact header - hidden on screen, shown on print */}}
+  <div id="print-header" class="hidden">
+    <h1 class="print-name">{{ .Site.Params.Author.name | default .Site.Title }}</h1>
+    {{ with .Site.Params.Author.headline }}
+      <p class="print-headline">{{ . | markdownify }}</p>
+    {{ end }}
+    <div class="print-links">
+      {{ with .Site.Params.Author.links }}
+        {{ range $links := . }}
+          {{ range $name, $url := $links }}
+            {{ if eq $name "email" }}
+              <span class="print-link-item">{{ partial "icon.html" $name }} {{ strings.TrimPrefix "mailto:" $url }}</span>
+            {{ else }}
+              <span class="print-link-item">{{ partial "icon.html" $name }} {{ $url }}</span>
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
     </div>
   </div>
 

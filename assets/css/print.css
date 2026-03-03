@@ -1,0 +1,236 @@
+@page {
+  size: A4;
+  margin: 12mm 14mm;
+}
+
+* {
+  color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+body {
+  font-size: 10pt !important;
+  line-height: 1.4 !important;
+  padding: 0 !important;
+  margin: 0 auto !important;
+  max-width: 100% !important;
+  background: white !important;
+  color: #1a1a1a !important;
+}
+
+/* Hide non-resume elements */
+.main-menu,
+#hero-header,
+#scroll-to-top,
+#the-top {
+  display: none !important;
+}
+
+/* Show print-only header */
+#print-header {
+  display: block !important;
+  text-align: center;
+  padding-bottom: 8pt;
+  margin-bottom: 12pt;
+  border-bottom: 1.5pt solid #333;
+}
+
+#print-header .print-name {
+  font-size: 20pt !important;
+  font-weight: 800;
+  margin: 0 0 2pt 0;
+  line-height: 1.2;
+  color: #111 !important;
+}
+
+#print-header .print-headline {
+  font-size: 11pt !important;
+  font-weight: 400;
+  margin: 0 0 6pt 0;
+  color: #444 !important;
+}
+
+#print-header .print-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4pt 12pt;
+  font-size: 8pt !important;
+  color: #333 !important;
+}
+
+#print-header .print-link-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 2pt;
+}
+
+#print-header .print-link-item .icon {
+  width: 9pt;
+  height: 9pt;
+}
+
+#print-header .print-link-item svg {
+  width: 9pt;
+  height: 9pt;
+  fill: currentColor;
+}
+
+/* Article container */
+article.prose {
+  max-width: 100% !important;
+  font-size: 10pt !important;
+}
+
+/* Kill all prose default margins inside resume sections */
+article.prose p,
+article.prose ul,
+article.prose li,
+article.prose h3,
+article.prose div {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Remove resume content wrapper padding */
+article .px-4 {
+  padding: 0 !important;
+}
+
+/* Section spacing — sections should feel more separated than entries within them */
+.resume-section {
+  margin-bottom: 10pt !important;
+}
+
+.resume-section:first-child {
+  margin-top: 10pt !important;
+}
+
+.resume-section h2 {
+  font-size: 12pt !important;
+  font-weight: 700;
+  margin-bottom: 4pt !important;
+  margin-top: 0 !important;
+  padding-bottom: 1pt;
+  border-bottom: 0.75pt solid #ccc;
+  color: #111 !important;
+}
+
+/* Bio */
+.resume-section p.text-lg {
+  font-size: 9pt !important;
+  line-height: 1.4 !important;
+}
+
+/* Experience/education entry spacing — tighter than section gaps */
+.resume-section .space-y-8 > * + * {
+  margin-top: 5pt !important;
+}
+
+.resume-section .pb-8 {
+  padding-bottom: 3pt !important;
+  border-bottom: none !important;
+}
+
+/* Position/degree title */
+.resume-section h3 {
+  font-size: 10pt !important;
+  font-weight: 700;
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+  color: #111 !important;
+}
+
+/* Date range */
+.resume-section span.whitespace-nowrap {
+  font-size: 8pt !important;
+}
+
+/* Company/location and description */
+.resume-section .mb-3 {
+  font-size: 8.5pt !important;
+}
+
+.resume-section p.text-neutral-700,
+.resume-section p.text-neutral-600 {
+  font-size: 8.5pt !important;
+  line-height: 1.35 !important;
+}
+
+/* Achievement lists */
+.resume-section ul.list-disc {
+  margin-top: 1pt !important;
+  padding-left: 12pt !important;
+}
+
+.resume-section ul.list-disc li {
+  font-size: 8pt !important;
+  line-height: 1.35 !important;
+}
+
+/* Technology tags and skill badges */
+.resume-section .flex.flex-wrap.gap-2 {
+  gap: 2pt !important;
+  margin-top: 1pt !important;
+}
+
+.resume-section .flex.flex-wrap.gap-2 > span {
+  font-size: 7pt !important;
+  padding: 0.5pt 3pt !important;
+  border-radius: 2pt;
+  background: #eee !important;
+  color: #333 !important;
+}
+
+/* Skills sub-sections */
+.resume-section .mb-8 {
+  margin-bottom: 4pt !important;
+}
+
+.resume-section .mb-8 h3,
+.resume-section > div > h3 {
+  font-size: 9pt !important;
+  font-weight: 600;
+  margin-bottom: 2pt !important;
+}
+
+.resume-section .rounded-lg {
+  font-size: 7.5pt !important;
+  padding: 0.5pt 3pt !important;
+  border-radius: 2pt;
+  background: #eee !important;
+  color: #333 !important;
+}
+
+/* Links */
+a {
+  color: #1a1a1a !important;
+  text-decoration: none !important;
+}
+
+/* Page break control — avoid breaking individual entries, but allow sections to flow */
+.resume-section .pb-8 {
+  break-inside: avoid;
+}
+
+h2, h3 {
+  break-after: avoid;
+}
+
+/* Force light colors when site is in dark mode */
+.dark body,
+.dark .text-neutral-100,
+.dark .text-neutral-200,
+.dark .text-neutral-300 {
+  color: #1a1a1a !important;
+}
+
+.dark .bg-neutral-700,
+.dark .bg-neutral-800 {
+  background: #eee !important;
+}
+
+.dark .border-neutral-700 {
+  border-color: #ddd !important;
+}
