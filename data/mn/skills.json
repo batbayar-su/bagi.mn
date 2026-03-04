@@ -1,26 +1,27 @@
 {
   "coding": [
+    "Typescript",
     "React",
-    "Vue",
-    "Angular",
-    "React Native",
     "NodeJS",
     "GraphQL",
-    "Ruby on Rails",
-    "AWS, Terraform",
+    "Vue",
+    "React Native",
+    "Docker",
+    "Terraform",
     "MySQL, PostgreSQL",
-    "Firebase",
-    "Golang, PHP, Linux"
+    "Firebase"
   ],
   "knowledge": [
     "Micro-frontend архитектур",
     "Веб болон мобайл хөгжүүлэлт",
     "CI/CD процесс, автоматжуулалт",
     "Cloud native шийдэл",
+    "Аюулгүй кодчилол",
+    "Security champion",
     "Infrastructure as a code",
-    "Реляцион мэдээллийн сан",
-    "NoSQL мэдээллийн сан",
-    "Мониторинг, алдаа засвар",
+    "RDBMS",
+    "NoSQL",
+    "Ажиглалт, дебаг хийх",
     "Linux сервер, виртуалчлал",
     "Agile, waterfall арга зүй"
   ],
@@ -28,8 +29,7 @@
     "Эерэг хандлагатай",
     "Бие даасан",
     "Багийн тоглогч",
-    "Зөвлөгч",
-    "Хичээнгүй",
-    "Баг урамшуулагч"
+    "Mентор",
+    "Хичээнгүй"
   ]
 }

@@ -1,26 +1,27 @@
 {
   "coding": [
+    "Typescript",
     "React",
-    "Vue",
-    "Angular",
-    "React Native",
     "NodeJS",
     "GraphQL",
-    "Ruby on Rails",
-    "AWS, Terraform",
+    "Vue",
+    "React Native",
+    "Docker",
+    "Terraform",
     "MySQL, PostgreSQL",
-    "Firebase",
-    "Golang, PHP, Linux"
+    "Firebase"
   ],
   "knowledge": [
     "Micro-frontend architecture",
     "Web and mobile development",
     "CI/CD process, automation",
     "Cloud native solution",
+    "Secure coding practices",
+    "Security champion",
     "Infrastructure as a code",
-    "Relational database",
-    "NoSQL database",
-    "Monitoring and troubleshooting",
+    "RDBMS",
+    "NoSQL",
+    "Observability, debugging",
     "Linux server, virtualization",
     "Agile, waterfall methodologies"
   ],
@@ -29,7 +30,6 @@
     "Self independent",
     "Team player",
     "Mentor",
-    "Hard worker",
-    "Team motivator"
+    "Hard worker"
   ]
 }
