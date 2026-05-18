@@ -1,6 +1,6 @@
 disabled = false
-languageCode = "mn"
-languageName = "Монгол"
+locale = "mn"
+label = "Монгол"
 weight = 1
 title = "bagi.mn"
 
