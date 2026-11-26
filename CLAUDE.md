@@ -4,26 +4,28 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-A personal portfolio/resume website for Batbayar Sukhbaatar, built with **Hugo** (v0.157.0+extended) using the **Blowfish theme** (git submodule). Multilingual: English (default) and Mongolian. Hosted at https://bagi.mn/.
+A personal portfolio/resume website for Batbayar Sukhbaatar, built with **Hugo** (v0.170.1+extended) using the **Blowfish theme** (git submodule). Multilingual: English (default) and Mongolian. Hosted at https://bagi.mn/.
 
 ## Commands
 
 ```bash
-# Development (Hugo server + Tailwind CSS watcher in parallel)
+# Development (Tailwind CSS watcher + Hugo server in parallel)
 npm run dev
 
-# Build production CSS only
+# Build the full site (compile CSS, then run Hugo)
 npm run build
 
-# Update Blowfish theme submodule
-npm run update-theme
+# Compile the theme's Tailwind CSS only
+npm run compile-theme
 
-# Build the full site
-hugo
+# Update Blowfish theme submodule, then recompile CSS
+npm run update-theme
 
 # Create new content
 hugo new content/posts/my-post.md
 ```
+
+Node 26 is pinned via `mise.toml`. The npm scripts have no package dependencies — Tailwind is run via `npx @tailwindcss/cli` and resolved from the theme submodule.
 
 The dev server runs at http://localhost:1313/.
 
@@ -46,7 +48,7 @@ Tailwind CSS is compiled from the theme's source using its CLI (not PostCSS):
 - **Input**: `themes/blowfish/assets/css/main.css`
 - **Output**: `assets/css/compiled/main.css`
 - **Config**: `themes/blowfish/tailwind.config.js`
-- The compiled CSS is checked into git. Run `npm run build` after any Tailwind class changes.
+- The compiled CSS is checked into git. Run `npm run compile-theme` after any Tailwind class changes and commit the output.
 
 Print styles are loaded via `layouts/partials/extend-head.html` from `assets/css/print.css`.
 
