@@ -16,12 +16,9 @@
     "url": "git+ssh://git@github.com/batbayar-su/bagi.mn.git"
   },
   "scripts": {
-    "dev": "concurrently 'hugo server' 'cross-env NODE_ENV=development npx @tailwindcss/cli -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit -w'",
-    "build": "cross-env NODE_ENV=production npx @tailwindcss/cli -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit",
-    "update-theme": "git submodule update --remote --recursive"
-  },
-  "devDependencies": {
-    "concurrently": "^9.2.1",
-    "cross-env": "^10.1.0"
+    "dev": "npm run compile-theme -- -w & hugo server",
+    "build": "npm run compile-theme & hugo",
+    "compile-theme": "NODE_ENV=development npx @tailwindcss/cli -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit",
+    "update-theme": "git submodule update --remote --recursive && npm run compile-theme"
   }
 }
